@@ -1,0 +1,156 @@
+From,To,Merchant Power,Steering Bonus
+Aleppo,Alexandria,0,0
+Aleppo,Constantinople,0,0
+Alexandria,Constantinople,0,0
+Alexandria,Genoa,10,0
+Alexandria,Venice,10,0
+Amazonas,Brazil,0,0
+Amazonas,Caribbean,0,0
+Amazonas,Cuiaba,0,0
+Astrakhan,Crimea,0,0
+Astrakhan,Kazan,0,0
+Australia,Moluccas,0,0
+Baltic Sea,Lübeck,0,0
+Basra,Aleppo,0,0
+Basra,Persia,0,0
+Beijing,Yumen,0,0
+Bengal,Coromandel,0,0
+Bengal,Doab,0,0
+Bordeaux,Champagne,0,0
+Brazil,Ivory Coast,0,0
+Burma,Bengal,0,0
+Burma,Siam,0,0
+California,Girin,0,0
+California,Mexico,0,0
+California,Mississippi River,0,0
+Canton,Malacca,0,0
+Canton,Philippines,0,0
+Canton,Hangzhou,0,0
+Cape,Ivory Coast,0,0
+Caribbean,Bordeaux,0,0
+Caribbean,Chesapeake Bay,0,0
+Caribbean,Sevilla,0,0
+Champagne,English Channel,0,0
+Champagne,Genoa,0,0
+Chengdu,Burma,0,0
+Chengdu,Canton,0,0
+Chengdu,Xi'an,0,0
+Chesapeake Bay,English Channel,0,0
+Chesapeake Bay,Gulf of St. Lawrence,0,0
+Congo,Ivory Coast,0,0
+Congo,Zambezi,0,0
+Constantinople,Ragusa,0,0
+Coromandel,Cape,0,0
+Coromandel,Gujarat,0,0
+Coromandel,Gulf of Aden,0,0
+Crimea,Constantinople,0,0
+Crimea,Kiev,0,0
+Crimea,Pest,0,0
+Cuiaba,Lima,0,0
+Cuiaba,Rio de la Plata,0,0
+Deccan,Coromandel,0,0
+Deccan,Gujarat,0,0
+Doab,Deccan,0,0
+Doab,Lahore,0,0
+Ethiopia,Alexandria,0,0
+Ethiopia,Gulf of Aden,0,0
+Girin,Beijing,0,0
+Girin,Nippon,0,0
+Girin,Siberia,0,0
+Great Lakes,Congo,0,0
+Great Lakes,Zanzibar,0,0
+Gujarat,Gulf of Aden,0,0
+Gujarat,Hormuz,0,0
+Gujarat,Zanzibar,0,0
+Gulf of Aden,Alexandria,0,0
+Gulf of Aden,Hormuz,0,0
+Gulf of Aden,Zanzibar,0,0
+Gulf of St. Lawrence,Bordeaux,0,0
+Gulf of St. Lawrence,North Sea,0,0
+Hangzhou,Beijing,0,0
+Hangzhou,Malacca,0,0
+Hangzhou,Xi'an,0,0
+Hormuz,Basra,0,0
+Hudson Bay,Gulf of St. Lawrence,0,0
+Ivory Coast,Bordeaux,0,0
+Ivory Coast,Caribbean,0,0
+Ivory Coast,English Channel,0,0
+Ivory Coast,Sevilla,0,0
+Katsina,Ethiopia,0,0
+Katsina,Timbuktu,0,0
+Katsina,Tunis,0,0
+Kazan,Novgorod,0,0
+Kiev,Krakow,0,0
+Kiev,Novgorod,0,0
+Krakow,Baltic Sea,0,0
+Krakow,Saxony,0,0
+Krakow,Wien,0,0
+Lahore,Gujarat,0,0
+Lahore,Persia,0,0
+Lahore,Samarkand,0,0
+Lhasa,Bengal,0,0
+Lhasa,Chengdu,0,0
+Lhasa,Lahore,0,0
+Lima,Panama,0,0
+Lima,Polynesian Triangle,0,0
+Lübeck,English Channel,0,0
+Malacca,Bengal,0,0
+Malacca,Cape,0,0
+Mexico,Caribbean,0,0
+Mexico,Panama,0,0
+Mexico,Polynesian Triangle,0,0
+Mississippi River,Caribbean,0,0
+Mississippi River,Ohio,0,0
+Moluccas,Malacca,0,0
+Nippon,Hangzhou,0,0
+North Sea,English Channel,0,0
+North Sea,Lübeck,0,0
+Novgorod,Baltic Sea,0,0
+Novgorod,White Sea,0,0
+Ohio,Gulf of St. Lawrence,0,0
+Ohio,Chesapeake Bay,0,0
+Panama,Caribbean,0,0
+Patagonia,Cuiaba,0,0
+Patagonia,Rio de la Plata,0,0
+Persia,Aleppo,0,0
+Persia,Astrakhan,0,0
+Pest,Krakow,0,0
+Pest,Wien,0,0
+Philippines,Moluccas,0,0
+Philippines,Polynesian Triangle,0,0
+Polynesian Triangle,Australia,0,0
+Polynesian Triangle,Nippon,0,0
+Polynesian Triangle,Panama,0,0
+Ragusa,Genoa,0,0
+Ragusa,Venice,0,0
+Ragusa,Pest,0,0
+Rheinland,Champagne,0,0
+Rheinland,Lübeck,0,0
+Rio de la Plata,Brazil,0,0
+Rio Grande,Mexico,0,0
+Rio Grande,Mississippi River,0,0
+Safi,Sevilla,0,0
+Samarkand,Astrakhan,0,0
+Samarkand,Persia,0,0
+Saxony,Lübeck,0,0
+Saxony,Rheinland,0,0
+Sevilla,Valencia,0,0
+Siam,Malacca,0,0
+Siam,Canton,0,0
+Siberia,Kazan,0,0
+Siberia,Samarkand,0,0
+Timbuktu,Ivory Coast,0,0
+Timbuktu,Safi,0,0
+Tunis,Genoa,0,0
+Tunis,Sevilla,0,0
+Tunis,Valencia,0,0
+Valencia,Genoa,0,0
+White Sea,North Sea,0,0
+Wien,Rheinland,0,0
+Wien,Saxony,0,0
+Wien,Venice,0,0
+Xi'an,Beijing,0,0
+Xi'an,Yumen,0,0
+Yumen,Samarkand,0,0
+Zambezi,Zanzibar,0,0
+Zanzibar,Cape,0,0
