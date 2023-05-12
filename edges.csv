@@ -1,14 +1,14 @@
 From,To,Merchant Power,Steering Bonus
-Aleppo,Alexandria,0,0
-Aleppo,Constantinople,0,0
-Alexandria,Constantinople,0,0
-Alexandria,Genoa,10,0
-Alexandria,Venice,10,0
+Aleppo,Alexandria,0.733,0.091
+Aleppo,Constantinople,0.266,0.1
+Alexandria,Constantinople,0.452,0.125
+Alexandria,Genoa,0.449,0.125
+Alexandria,Venice,0.097,0.08
 Amazonas,Brazil,0,0
 Amazonas,Caribbean,0,0
 Amazonas,Cuiaba,0,0
-Astrakhan,Crimea,0,0
-Astrakhan,Kazan,0,0
+Astrakhan,Crimea,0.697,0.121
+Astrakhan,Kazan,0.302,0.05
 Australia,Moluccas,0,0
 Baltic Sea,Lübeck,0,0
 Basra,Aleppo,0,0
@@ -39,13 +39,13 @@ Chesapeake Bay,English Channel,0,0
 Chesapeake Bay,Gulf of St. Lawrence,0,0
 Congo,Ivory Coast,0,0
 Congo,Zambezi,0,0
-Constantinople,Ragusa,0,0
+Constantinople,Ragusa,1,0.125
 Coromandel,Cape,0,0
 Coromandel,Gujarat,0,0
 Coromandel,Gulf of Aden,0,0
-Crimea,Constantinople,0,0
-Crimea,Kiev,0,0
-Crimea,Pest,0,0
+Crimea,Constantinople,0.015,0.05
+Crimea,Kiev,0.818,0.091
+Crimea,Pest,0.165,0.05
 Cuiaba,Lima,0,0
 Cuiaba,Rio de la Plata,0,0
 Deccan,Coromandel,0,0
@@ -121,8 +121,8 @@ Philippines,Polynesian Triangle,0,0
 Polynesian Triangle,Australia,0,0
 Polynesian Triangle,Nippon,0,0
 Polynesian Triangle,Panama,0,0
-Ragusa,Genoa,0,0
-Ragusa,Venice,0,0
+Ragusa,Genoa,0.125,0.116
+Ragusa,Venice,0.417,0.137
 Ragusa,Pest,0,0
 Rheinland,Champagne,0,0
 Rheinland,Lübeck,0,0
