@@ -1,81 +1,81 @@
-Node,Local Value,Total Power,Collecting Power,Transfer Power,Power Modifier,Collecting,My Trade Power,Trade Efficiency
-Aleppo,5.3,268.4,0.48,0.52,0.153,FALSE,24.336,0.17
-Alexandria,7.84,376.5,0.59,0.41,0.153,FALSE,24.336,0.17
-Amazonas,0,0,0,0,0,FALSE,0,0
-Astrakhan,5.9,382,0.52,0.48,0.103,FALSE,0,0.07
-Australia,0,0,0,0,0,FALSE,0,0
-Baltic Sea,0,0,0,0,0,FALSE,0,0
-Basra,0,0,0,0,0,FALSE,0,0
-Beijing,0,0,0,0,0,FALSE,0,0
-Bengal,0,0,0,0,0,FALSE,0,0
-Bordeaux,0,0,0,0,0,FALSE,0,0
-Brazil,0,0,0,0,0,FALSE,0,0
-Burma,0,0,0,0,0,FALSE,0,0
-California,0,0,0,0,0,FALSE,0,0
-Canton,0,0,0,0,0,FALSE,0,0
-Cape,0,0,0,0,0,FALSE,0,0
-Caribbean,0,0,0,0,0,FALSE,0,0
-Champagne,0,0,0,0,0,FALSE,0,0
-Chengdu,0,0,0,0,0,FALSE,0,0
-Chesapeake Bay,0,0,0,0,0,FALSE,0,0
-Congo,0,0,0,0,0,FALSE,0,0
-Constantinople,5.97,288.4,0.84,0.16,0.303,TRUE,139.083,0.07
-Coromandel,0,0,0,0,0,FALSE,0,0
-Crimea,4.38,408,0.56,0.44,0.103,FALSE,21.127,0.07
-Cuiaba,0,0,0,0,0,FALSE,0,0
-Deccan,0,0,0,0,0,FALSE,0,0
-Doab,0,0,0,0,0,FALSE,0,0
-English Channel,0,0,0,0,0,FALSE,0,0
-Ethiopia,0,0,0,0,0,FALSE,0,0
-Genoa,0,0,0,0,0,FALSE,0,0
-Girin,0,0,0,0,0,FALSE,0,0
-Great Lakes,0,0,0,0,0,FALSE,0,0
-Gujarat,0,0,0,0,0,FALSE,0,0
-Gulf of Aden,0,0,0,0,0,FALSE,0,0
-Gulf of St. Lawrence,0,0,0,0,0,FALSE,0,0
-Hangzhou,0,0,0,0,0,FALSE,0,0
-Hormuz,0,0,0,0,0,FALSE,0,0
-Hudson Bay,0,0,0,0,0,FALSE,0,0
-Ivory Coast,0,0,0,0,0,FALSE,0,0
-Katsina,0,0,0,0,0,FALSE,0,0
-Kazan,0,0,0,0,0,FALSE,0,0
-Kiev,0,0,0,0,0,FALSE,0,0
-Krakow,0,0,0,0,0,FALSE,0,0
-Lahore,0,0,0,0,0,FALSE,0,0
-Lhasa,0,0,0,0,0,FALSE,0,0
-Lima,0,0,0,0,0,FALSE,0,0
-Lübeck,0,0,0,0,0,FALSE,0,0
-Malacca,0,0,0,0,0,FALSE,0,0
-Mexico,0,0,0,0,0,FALSE,0,0
-Mississippi River,0,0,0,0,0,FALSE,0,0
-Moluccas,0,0,0,0,0,FALSE,0,0
-Nippon,0,0,0,0,0,FALSE,0,0
-North Sea,0,0,0,0,0,FALSE,0,0
-Novgorod,0,0,0,0,0,FALSE,0,0
-Ohio,0,0,0,0,0,FALSE,0,0
-Panama,0,0,0,0,0,FALSE,0,0
-Patagonia,0,0,0,0,0,FALSE,0,0
-Persia,0,0,0,0,0,FALSE,0,0
-Pest,0,0,0,0,0,FALSE,0,0
-Philippines,0,0,0,0,0,FALSE,0,0
-Polynesian Triangle,0,0,0,0,0,FALSE,0,0
-Ragusa,5.11,437.8,0.41,0.59,0.103,FALSE,29.89,0.07
-Rheinland,0,0,0,0,0,FALSE,0,0
-Rio de la Plata,0,0,0,0,0,FALSE,0,0
-Rio Grande,0,0,0,0,0,FALSE,0,0
-Safi,0,0,0,0,0,FALSE,0,0
-Samarkand,0,0,0,0,0,FALSE,0,0
-Saxony,0,0,0,0,0,FALSE,0,0
-Sevilla,0,0,0,0,0,FALSE,0,0
-Siam,0,0,0,0,0,FALSE,0,0
-Siberia,0,0,0,0,0,FALSE,0,0
-Timbuktu,0,0,0,0,0,FALSE,0,0
-Tunis,0,0,0,0,0,FALSE,0,0
-Valencia,0,0,0,0,0,FALSE,0,0
-Venice,0,0,0,0,0,FALSE,0,0
-White Sea,0,0,0,0,0,FALSE,0,0
-Wien,0,0,0,0,0,FALSE,0,0
-Xi'an,0,0,0,0,0,FALSE,0,0
-Yumen,0,0,0,0,0,FALSE,0,0
-Zambezi,0,0,0,0,0,FALSE,0,0
-Zanzibar,0,0,0,0,0,FALSE,0,0
+Node,Local Value,Total Power,Collecting Power,Transfer Power,Power Modifier,Collecting,Merchant,My Trade Power,Trade Efficiency
+Aleppo,5.3,268.4,0.48,0.52,0.153,FALSE,TRUE,24.336,0.17
+Alexandria,7.84,376.5,0.59,0.41,0.153,FALSE,TRUE,24.336,0.17
+Amazonas,0,0,0,0,0,FALSE,FALSE,0,0
+Astrakhan,5.9,382,0.52,0.48,0.103,FALSE,FALSE,0,0.07
+Australia,0,0,0,0,0,FALSE,FALSE,0,0
+Baltic Sea,0,0,0,0,0,FALSE,FALSE,0,0
+Basra,0,0,0,0,0,FALSE,FALSE,0,0
+Beijing,0,0,0,0,0,FALSE,FALSE,0,0
+Bengal,0,0,0,0,0,FALSE,FALSE,0,0
+Bordeaux,0,0,0,0,0,FALSE,FALSE,0,0
+Brazil,0,0,0,0,0,FALSE,FALSE,0,0
+Burma,0,0,0,0,0,FALSE,FALSE,0,0
+California,0,0,0,0,0,FALSE,FALSE,0,0
+Canton,0,0,0,0,0,FALSE,FALSE,0,0
+Cape,0,0,0,0,0,FALSE,FALSE,0,0
+Caribbean,0,0,0,0,0,FALSE,FALSE,0,0
+Champagne,0,0,0,0,0,FALSE,FALSE,0,0
+Chengdu,0,0,0,0,0,FALSE,FALSE,0,0
+Chesapeake Bay,0,0,0,0,0,FALSE,FALSE,0,0
+Congo,0,0,0,0,0,FALSE,FALSE,0,0
+Constantinople,5.97,288.4,0.84,0.16,0.303,TRUE,FALSE,139.083,0.07
+Coromandel,0,0,0,0,0,FALSE,FALSE,0,0
+Crimea,4.38,408,0.56,0.44,0.103,FALSE,FALSE,21.127,0.07
+Cuiaba,0,0,0,0,0,FALSE,FALSE,0,0
+Deccan,0,0,0,0,0,FALSE,FALSE,0,0
+Doab,0,0,0,0,0,FALSE,FALSE,0,0
+English Channel,0,0,0,0,0,FALSE,FALSE,0,0
+Ethiopia,0,0,0,0,0,FALSE,FALSE,0,0
+Genoa,0,0,0,0,0,FALSE,FALSE,0,0
+Girin,0,0,0,0,0,FALSE,FALSE,0,0
+Great Lakes,0,0,0,0,0,FALSE,FALSE,0,0
+Gujarat,0,0,0,0,0,FALSE,FALSE,0,0
+Gulf of Aden,0,0,0,0,0,FALSE,FALSE,0,0
+Gulf of St. Lawrence,0,0,0,0,0,FALSE,FALSE,0,0
+Hangzhou,0,0,0,0,0,FALSE,FALSE,0,0
+Hormuz,0,0,0,0,0,FALSE,FALSE,0,0
+Hudson Bay,0,0,0,0,0,FALSE,FALSE,0,0
+Ivory Coast,0,0,0,0,0,FALSE,FALSE,0,0
+Katsina,0,0,0,0,0,FALSE,FALSE,0,0
+Kazan,0,0,0,0,0,FALSE,FALSE,0,0
+Kiev,0,0,0,0,0,FALSE,FALSE,0,0
+Krakow,0,0,0,0,0,FALSE,FALSE,0,0
+Lahore,0,0,0,0,0,FALSE,FALSE,0,0
+Lhasa,0,0,0,0,0,FALSE,FALSE,0,0
+Lima,0,0,0,0,0,FALSE,FALSE,0,0
+Lübeck,0,0,0,0,0,FALSE,FALSE,0,0
+Malacca,0,0,0,0,0,FALSE,FALSE,0,0
+Mexico,0,0,0,0,0,FALSE,FALSE,0,0
+Mississippi River,0,0,0,0,0,FALSE,FALSE,0,0
+Moluccas,0,0,0,0,0,FALSE,FALSE,0,0
+Nippon,0,0,0,0,0,FALSE,FALSE,0,0
+North Sea,0,0,0,0,0,FALSE,FALSE,0,0
+Novgorod,0,0,0,0,0,FALSE,FALSE,0,0
+Ohio,0,0,0,0,0,FALSE,FALSE,0,0
+Panama,0,0,0,0,0,FALSE,FALSE,0,0
+Patagonia,0,0,0,0,0,FALSE,FALSE,0,0
+Persia,0,0,0,0,0,FALSE,FALSE,0,0
+Pest,0,0,0,0,0,FALSE,FALSE,0,0
+Philippines,0,0,0,0,0,FALSE,FALSE,0,0
+Polynesian Triangle,0,0,0,0,0,FALSE,FALSE,0,0
+Ragusa,5.11,437.8,0.41,0.59,0.103,FALSE,FALSE,29.89,0.07
+Rheinland,0,0,0,0,0,FALSE,FALSE,0,0
+Rio de la Plata,0,0,0,0,0,FALSE,FALSE,0,0
+Rio Grande,0,0,0,0,0,FALSE,FALSE,0,0
+Safi,0,0,0,0,0,FALSE,FALSE,0,0
+Samarkand,0,0,0,0,0,FALSE,FALSE,0,0
+Saxony,0,0,0,0,0,FALSE,FALSE,0,0
+Sevilla,0,0,0,0,0,FALSE,FALSE,0,0
+Siam,0,0,0,0,0,FALSE,FALSE,0,0
+Siberia,0,0,0,0,0,FALSE,FALSE,0,0
+Timbuktu,0,0,0,0,0,FALSE,FALSE,0,0
+Tunis,0,0,0,0,0,FALSE,FALSE,0,0
+Valencia,0,0,0,0,0,FALSE,FALSE,0,0
+Venice,0,0,0,0,0,FALSE,FALSE,0,0
+White Sea,0,0,0,0,0,FALSE,FALSE,0,0
+Wien,0,0,0,0,0,FALSE,FALSE,0,0
+Xi'an,0,0,0,0,0,FALSE,FALSE,0,0
+Yumen,0,0,0,0,0,FALSE,FALSE,0,0
+Zambezi,0,0,0,0,0,FALSE,FALSE,0,0
+Zanzibar,0,0,0,0,0,FALSE,FALSE,0,0
