@@ -128,7 +128,6 @@ def place_merchants(nodes):
     print('Merchant placement:')
     for node, to in best_merchants:
         print(f'{node} -> {to}')
-    print()
 
 nodes = read_nodes()
 value = calculate(nodes)['My Value'].sum()
