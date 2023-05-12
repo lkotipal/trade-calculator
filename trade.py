@@ -63,29 +63,31 @@ def calculate(nodes):
     nodes.loc[transferring, 'Transfer Power'] += nodes.loc[transferring, 'My Trade Power']
     nodes['Merchant Power'] += nodes['My Trade Power'] * nodes['Steering']
     
+    # Calculate steering
     nodes['Merchant Power'] = nodes['Merchant Power'].apply(lambda x: x if np.sum(x) else np.ones_like(x))
     nodes['Total Power'] = nodes['Total Power'].apply(lambda x: x if x > 0 else 1)
     nodes['Steered'] = nodes['Transfer Power'] / nodes['Total Power'] * nodes['Merchant Power'] / (nodes['Merchant Power'].apply(lambda x: np.sum(x))) * (1.0 + nodes['Steering Bonus'])
-    nodes['Total Value'] = nodes['Local Value']
 
+    # Steer trade
+    nodes['Total Value'] = nodes['Local Value']
     for name, data in nodes.iterrows():
         nodes.loc[data['To'], 'Total Value'] += data['Steered'] * data['Total Value']
         nodes.loc[name, 'Total Value'] *= data['Collecting Power'] / data['Total Power']
 
+    # Calculate profits
     nodes['My Value'] = nodes['Collecting'] * (1 + nodes['Trade Efficiency']) * nodes['My Trade Power'] / nodes['Total Power'] * nodes['Total Value']
-
     return nodes
 
 nodes = read_nodes()
 value = calculate(nodes)['My Value'].sum()
-print(value)
+print(f'{value:.3f}')
 h = 0.001
 for node in nodes[nodes['Total Power'] > 0].index:
     print(node)
     nodes.loc[node, 'My Trade Power'] += h
-    print(f"1 power gives {(calculate(nodes)['My Value'].sum() - value) / h:.3} dct")
+    print(f"1 power gives {(calculate(nodes)['My Value'].sum() - value) / h:.3f} dct")
     nodes.loc[node, 'My Trade Power'] -= h
 
     nodes.loc[node, 'Local Value'] += h
-    print(f"1 value gives {(calculate(nodes)['My Value'].sum() - value) / h:.3} dct")
+    print(f"1 value gives {(calculate(nodes)['My Value'].sum() - value) / (12 * h):.3f} dct")
     nodes.loc[node, 'Local Value'] -= h
