@@ -88,6 +88,8 @@ for node in nodes[nodes['Total Power'] > 0].index:
     print(f"1 power gives {(calculate(nodes)['My Value'].sum() - value) / h:.3f} dct")
     nodes.loc[node, 'My Trade Power'] -= h
 
+    # Goods produced is given per annum
     nodes.loc[node, 'Local Value'] += h
     print(f"1 value gives {(calculate(nodes)['My Value'].sum() - value) / (12 * h):.3f} dct")
     nodes.loc[node, 'Local Value'] -= h
+    print()
