@@ -32,18 +32,19 @@ def read_nodes():
     nodes['Steering Bonus'] = nodes['Steering Bonus'].apply(np.array)
     nodes['Steering'] = nodes['Steering'].apply(np.array)
     # Percentage -> number
-    nodes['Collecting Power'] = nodes['Total Power'] * nodes['Collecting Power']
-    nodes['Transfer Power'] = nodes['Total Power'] * nodes['Transfer Power']
+    nodes['Collecting Power'] = nodes['Trade Power'] * nodes['Collecting Power']
+    nodes['Transfer Power'] = nodes['Trade Power'] * nodes['Transfer Power']
     nodes['Merchant Power'] = nodes['Transfer Power'] * nodes['Merchant Power']
     # Separate player power
-    nodes['Total Power'] -= nodes['My Trade Power']
-    nodes['Merchant Power'] -= nodes['My Trade Power'] * nodes['Steering']
+    nodes['Trade Power'] -= nodes['Our Power']
+    nodes['Merchant Power'] -= nodes['Our Power'] * nodes['Steering']
     collecting = nodes['Collecting']
     transferring = ~collecting
-    nodes.loc[collecting, 'Collecting Power'] -= nodes.loc[collecting, 'My Trade Power']
-    nodes.loc[transferring, 'Transfer Power'] -= nodes.loc[transferring, 'My Trade Power']
-    nodes['My Trade Power'] /= (1 + nodes['Power Modifier'])
+    nodes.loc[collecting, 'Collecting Power'] -= nodes.loc[collecting, 'Our Power']
+    nodes.loc[transferring, 'Transfer Power'] -= nodes.loc[transferring, 'Our Power']
+    nodes['Our Power'] /= (1 + nodes['Power Modifier'])
     nodes.loc[nodes['Collecting'], 'Power Modifier'] -= 0.1 * nodes['Steering'].apply(np.sum).sum()
+    nodes['Privateer Power'] = 0
 
     # Sort nodes
     nodes['Mark'] = 0
@@ -57,24 +58,26 @@ def calculate_value(nodes):
     nodes = nodes.copy()
     # Add player power
     nodes.loc[nodes['Collecting'], 'Power Modifier'] += 0.1 * nodes['Steering'].apply(np.sum).sum()
-    nodes['My Trade Power'] *= (1 + nodes['Power Modifier'])
-    nodes['Total Power'] += nodes['My Trade Power']
+    nodes['Our Power'] *= (1 + nodes['Power Modifier'])
+    nodes['Privateer Efficiency'] = nodes['Privateer Efficiency'].fillna(-1)
+    nodes['Privateer Power'] *= 1.5 * (1 + nodes['Privateer Efficiency'])
+    nodes['Trade Power'] += nodes['Our Power'] + nodes['Privateer Power']
     collecting = nodes['Collecting']
     transferring = ~collecting
-    nodes.loc[collecting, 'Collecting Power'] += nodes.loc[collecting, 'My Trade Power']
-    nodes.loc[transferring, 'Transfer Power'] += nodes.loc[transferring, 'My Trade Power']
-    nodes['Merchant Power'] += nodes['My Trade Power'] * nodes['Steering']
+    nodes.loc[collecting, 'Collecting Power'] += nodes.loc[collecting, 'Our Power']
+    nodes.loc[transferring, 'Transfer Power'] += nodes.loc[transferring, 'Our Power']
+    nodes['Merchant Power'] += nodes['Our Power'] * nodes['Steering']
     
     # Calculate steering
     nodes['Merchant Power'] = nodes['Merchant Power'].apply(lambda x: x if np.sum(x) else np.ones_like(x))
-    nodes['Steered'] = nodes['Transfer Power'] / nodes['Total Power'] * nodes['Merchant Power'] / (nodes['Merchant Power'].apply(lambda x: np.sum(x))) * (1.0 + nodes['Steering Bonus'])
+    nodes['Steered'] = nodes['Transfer Power'] / nodes['Trade Power'] * nodes['Merchant Power'] / (nodes['Merchant Power'].apply(lambda x: np.sum(x))) * (1.0 + nodes['Steering Bonus'])
 
     # Steer trade
     nodes['Total Value'] = nodes['Local Value']
-    for node in nodes[nodes['Total Power'] > 0].index:
+    for node in nodes[nodes['Trade Power'] > 0].index:
         nodes.loc[nodes.loc[node, 'To'], 'Total Value'] += nodes.loc[node, 'Steered'] * nodes.loc[node, 'Total Value']
-        nodes.loc[node, 'Total Value'] *= nodes.loc[node, 'Collecting Power'] / nodes.loc[node, 'Total Power']
+        nodes.loc[node, 'Total Value'] *= nodes.loc[node, 'Collecting Power'] / nodes.loc[node, 'Trade Power']
 
     # Calculate profits
-    nodes['My Value'] = nodes['Collecting'] * (1 + nodes['Trade Efficiency']) * nodes['My Trade Power'] / nodes['Collecting Power'] * nodes['Total Value']
+    nodes['My Value'] = (nodes['Collecting'] * (1 + nodes['Trade Efficiency']) * nodes['Our Power'] / nodes['Collecting Power'] + nodes['Privateer Power'] / (2 * nodes['Trade Power'])) * nodes['Total Value']
     return nodes

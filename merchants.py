@@ -8,7 +8,7 @@ def remove_merchant(nodes, node):
     nodes.loc[node, 'Steering'][:] = False
     nodes.loc[node, 'Trade Efficiency'] -= 0.1
     nodes.loc[node, 'Power Modifier'] -= 0.05
-    nodes.loc[node, 'My Trade Power'] -= 2
+    nodes.loc[node, 'Our Power'] -= 2
 
 def add_merchant(nodes, node, to):
     nodes.loc[node, 'Merchant'] = True
@@ -16,7 +16,7 @@ def add_merchant(nodes, node, to):
         nodes.loc[node, 'Steering'][:] = [True if s == to else False for s in nodes.loc[node, 'To']]
     nodes.loc[node, 'Trade Efficiency'] += 0.1
     nodes.loc[node, 'Power Modifier'] += 0.05
-    nodes.loc[node, 'My Trade Power'] += 2
+    nodes.loc[node, 'Our Power'] += 2
 
 def place_merchants(nodes):
     merchants = 0
@@ -29,7 +29,7 @@ def place_merchants(nodes):
     best_merchants = []
     for _ in range(merchants):
         best_fromto = ()
-        for node, data in nodes[~nodes['Merchant'] & nodes['Total Power'] > 0].iterrows():
+        for node, data in nodes[~nodes['Merchant'] & nodes['Trade Power'] > 0].iterrows():
             if data['Collecting']:
                 add_merchant(nodes, node, node)
                 value = calculate_value(nodes)['My Value'].sum()
