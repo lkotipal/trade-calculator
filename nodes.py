@@ -43,7 +43,7 @@ def read_nodes():
     nodes.loc[collecting, 'Collecting Power'] -= nodes.loc[collecting, 'My Trade Power']
     nodes.loc[transferring, 'Transfer Power'] -= nodes.loc[transferring, 'My Trade Power']
     nodes['My Trade Power'] /= (1 + nodes['Power Modifier'])
-    #nodes.loc[nodes['Collecting'], 'Power Modifier'] -= 0.1 * nodes['Steering'].apply(np.sum).sum()
+    nodes.loc[nodes['Collecting'], 'Power Modifier'] -= 0.1 * nodes['Steering'].apply(np.sum).sum()
 
     # Sort nodes
     nodes['Mark'] = 0
@@ -53,10 +53,10 @@ def read_nodes():
     nodes = nodes.loc[sorted_nodes[::-1]].drop('Mark', axis=1)
     return nodes
 
-def calculate(nodes):
+def calculate_value(nodes):
     nodes = nodes.copy()
     # Add player power
-    #nodes.loc[nodes['Collecting'], 'Power Modifier'] += 0.1 * nodes['Steering'].apply(np.sum).sum()
+    nodes.loc[nodes['Collecting'], 'Power Modifier'] += 0.1 * nodes['Steering'].apply(np.sum).sum()
     nodes['My Trade Power'] *= (1 + nodes['Power Modifier'])
     nodes['Total Power'] += nodes['My Trade Power']
     collecting = nodes['Collecting']
@@ -78,77 +78,3 @@ def calculate(nodes):
     # Calculate profits
     nodes['My Value'] = nodes['Collecting'] * (1 + nodes['Trade Efficiency']) * nodes['My Trade Power'] / nodes['Collecting Power'] * nodes['Total Value']
     return nodes
-
-def remove_merchant(nodes, node):
-    nodes.loc[node, 'Merchant'] = False
-    nodes.loc[node, 'Steering'][:] = False
-    nodes.loc[node, 'Trade Efficiency'] -= 0.1
-    nodes.loc[node, 'Power Modifier'] -= 0.05
-    nodes.loc[node, 'My Trade Power'] -= 2
-
-def add_merchant(nodes, node, to):
-    nodes.loc[node, 'Merchant'] = True
-    if node != to:
-        nodes.loc[node, 'Steering'][:] = [True if s == to else False for s in nodes.loc[node, 'To']]
-    nodes.loc[node, 'Trade Efficiency'] += 0.1
-    nodes.loc[node, 'Power Modifier'] += 0.05
-    nodes.loc[node, 'My Trade Power'] += 2
-
-def place_merchants(nodes):
-    merchants = 0
-    for node in nodes[nodes['Merchant']].index:
-        remove_merchant(nodes, node)
-        merchants += 1
-
-    # Greedy algorithm
-    best_value = calculate(nodes)['My Value'].sum()
-    best_merchants = []
-    for _ in range(merchants):
-        best_fromto = ()
-        for node, data in nodes[~nodes['Merchant'] & nodes['Total Power'] > 0].iterrows():
-            if data['Collecting']:
-                add_merchant(nodes, node, node)
-                value = calculate(nodes)['My Value'].sum()
-                if value > best_value:
-                    best_fromto = (node, node)
-                    best_value = value
-                remove_merchant(nodes, node)
-            else:
-                for to in data['To']:
-                    add_merchant(nodes, node, to)
-                    value = calculate(nodes)['My Value'].sum()
-                    if value > best_value:
-                        best_fromto = (node, to)
-                        best_value = value
-                    remove_merchant(nodes, node)
-        add_merchant(nodes, best_fromto[0], best_fromto[1])       
-        best_merchants.append(best_fromto)
-
-    print('Merchant placement:')
-    for node, to in best_merchants:
-        print(f'{node} -> {to}')
-
-nodes = read_nodes()
-value = calculate(nodes)['My Value'].sum()
-print(f'Profit: {value:.3f}')
-print()
-
-# Disabled for inaccuracy wrt merchant bonus
-#place_merchants(nodes)
-#value = calculate(nodes)['My Value'].sum()
-#print(f'Profit: {value:.3f}')
-#print()
-
-h = 0.001
-print('Marginal profit:')
-for node in nodes[nodes['Total Power'] > 0].index:
-    print(node)
-    nodes.loc[node, 'My Trade Power'] += h
-    print(f"1 power gives {(calculate(nodes)['My Value'].sum() - value) / h:.3f} dct")
-    nodes.loc[node, 'My Trade Power'] -= h
-
-    # Goods produced is given per annum
-    nodes.loc[node, 'Local Value'] += h
-    print(f"1 value gives {(calculate(nodes)['My Value'].sum() - value) / (12 * h):.3f} dct")
-    nodes.loc[node, 'Local Value'] -= h
-    print()
