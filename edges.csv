@@ -1,14 +1,14 @@
 From,To,Merchant Power,Steering Bonus,Steering
-Aleppo,Alexandria,0.733,0.091,FALSE
-Aleppo,Constantinople,0.266,0.1,TRUE
-Alexandria,Constantinople,0.452,0.125,TRUE
-Alexandria,Genoa,0.449,0.125,FALSE
-Alexandria,Venice,0.097,0.08,FALSE
+Aleppo,Alexandria,0.729,0.066,FALSE
+Aleppo,Constantinople,0.27,0.1,TRUE
+Alexandria,Constantinople,0.322,0.1,TRUE
+Alexandria,Genoa,0.375,0.122,FALSE
+Alexandria,Venice,0.301,0.115,FALSE
 Amazonas,Brazil,0,0,FALSE
 Amazonas,Caribbean,0,0,FALSE
 Amazonas,Cuiaba,0,0,FALSE
-Astrakhan,Crimea,0.697,0.121,FALSE
-Astrakhan,Kazan,0.302,0.05,FALSE
+Astrakhan,Crimea,0.605,0.114,FALSE
+Astrakhan,Kazan,0.394,0.05,FALSE
 Australia,Moluccas,0,0,FALSE
 Baltic Sea,Lübeck,0,0,FALSE
 Basra,Aleppo,0,0,FALSE
@@ -39,13 +39,13 @@ Chesapeake Bay,English Channel,0,0,FALSE
 Chesapeake Bay,Gulf of St. Lawrence,0,0,FALSE
 Congo,Ivory Coast,0,0,FALSE
 Congo,Zambezi,0,0,FALSE
-Constantinople,Ragusa,1,0.125,FALSE
+Constantinople,Ragusa,1,0.114,FALSE
 Coromandel,Cape,0,0,FALSE
 Coromandel,Gujarat,0,0,FALSE
 Coromandel,Gulf of Aden,0,0,FALSE
-Crimea,Constantinople,0.015,0.05,FALSE
-Crimea,Kiev,0.818,0.091,FALSE
-Crimea,Pest,0.165,0.05,FALSE
+Crimea,Constantinople,0,0,FALSE
+Crimea,Kiev,0.493,0.05,FALSE
+Crimea,Pest,0.506,0.075,FALSE
 Cuiaba,Lima,0,0,FALSE
 Cuiaba,Rio de la Plata,0,0,FALSE
 Deccan,Coromandel,0,0,FALSE
@@ -80,11 +80,11 @@ Katsina,Ethiopia,0,0,FALSE
 Katsina,Timbuktu,0,0,FALSE
 Katsina,Tunis,0,0,FALSE
 Kazan,Novgorod,0,0,FALSE
-Kiev,Krakow,0,0,FALSE
-Kiev,Novgorod,0,0,FALSE
-Krakow,Baltic Sea,0,0,FALSE
-Krakow,Saxony,0,0,FALSE
-Krakow,Wien,0,0,FALSE
+Kiev,Krakow,0.396,0.091,FALSE
+Kiev,Novgorod,0.603,0.106,FALSE
+Krakow,Baltic Sea,0.431,0.12,FALSE
+Krakow,Saxony,0.324,0.113,FALSE
+Krakow,Wien,0.244,0.104,FALSE
 Lahore,Gujarat,0,0,FALSE
 Lahore,Persia,0,0,FALSE
 Lahore,Samarkand,0,0,FALSE
@@ -114,16 +114,16 @@ Patagonia,Cuiaba,0,0,FALSE
 Patagonia,Rio de la Plata,0,0,FALSE
 Persia,Aleppo,0,0,FALSE
 Persia,Astrakhan,0,0,FALSE
-Pest,Krakow,0,0,FALSE
-Pest,Wien,0,0,FALSE
+Pest,Krakow,0.515,0.091,FALSE
+Pest,Wien,0.484,0.104,FALSE
 Philippines,Moluccas,0,0,FALSE
 Philippines,Polynesian Triangle,0,0,FALSE
 Polynesian Triangle,Australia,0,0,FALSE
 Polynesian Triangle,Nippon,0,0,FALSE
 Polynesian Triangle,Panama,0,0,FALSE
-Ragusa,Genoa,0.125,0.116,FALSE
-Ragusa,Venice,0.417,0.137,FALSE
-Ragusa,Pest,0,0,FALSE
+Ragusa,Genoa,0.043,0.05,FALSE
+Ragusa,Venice,0.427,0.127,FALSE
+Ragusa,Pest,0.528,0.075,FALSE
 Rheinland,Champagne,0,0,FALSE
 Rheinland,Lübeck,0,0,FALSE
 Rio de la Plata,Brazil,0,0,FALSE
@@ -132,8 +132,8 @@ Rio Grande,Mississippi River,0,0,FALSE
 Safi,Sevilla,0,0,FALSE
 Samarkand,Astrakhan,0,0,FALSE
 Samarkand,Persia,0,0,FALSE
-Saxony,Lübeck,0,0,FALSE
-Saxony,Rheinland,0,0,FALSE
+Saxony,Lübeck,0.732,0.131,FALSE
+Saxony,Rheinland,0.403,0.112,FALSE
 Sevilla,Valencia,0,0,FALSE
 Siam,Malacca,0,0,FALSE
 Siam,Canton,0,0,FALSE
@@ -142,13 +142,13 @@ Siberia,Samarkand,0,0,FALSE
 Timbuktu,Ivory Coast,0,0,FALSE
 Timbuktu,Safi,0,0,FALSE
 Tunis,Genoa,0,0,FALSE
-Tunis,Sevilla,0,0,FALSE
+Tunis,Sevilla,1,0.096,FALSE
 Tunis,Valencia,0,0,FALSE
-Valencia,Genoa,0,0,FALSE
+Valencia,Genoa,1,0.12,FALSE
 White Sea,North Sea,0,0,FALSE
-Wien,Rheinland,0,0,FALSE
-Wien,Saxony,0,0,FALSE
-Wien,Venice,0,0,FALSE
+Wien,Rheinland,0.248,0.113,FALSE
+Wien,Saxony,0.412,0.112,FALSE
+Wien,Venice,0.338,0.096,FALSE
 Xi'an,Beijing,0,0,FALSE
 Xi'an,Yumen,0,0,FALSE
 Yumen,Samarkand,0,0,FALSE
