@@ -5,7 +5,7 @@ from nodes import calculate_value, read_nodes
 def main():
     nodes = read_nodes()
     value = calculate_value(nodes)['My Value'].sum()
-    print(f'Profit: {value:.3f}')
+    print(f'Profit: {value:.3f} dct')
     print()
 
     h = 0.001

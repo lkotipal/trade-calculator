@@ -45,8 +45,10 @@ def place_merchants(nodes):
                         best_fromto = (node, to)
                         best_value = value
                     remove_merchant(nodes, node)
-        add_merchant(nodes, best_fromto[0], best_fromto[1])       
+        add_merchant(nodes, best_fromto[0], best_fromto[1])
         best_merchants.append(best_fromto)
+    
+    # TODO: collection
 
     print('Merchant placement:')
     for node, to in best_merchants:
@@ -55,12 +57,12 @@ def place_merchants(nodes):
 def main():
     nodes = read_nodes()
     value = calculate_value(nodes)['My Value'].sum()
-    print(f'Profit: {value:.3f}')
+    print(f'Profit: {value:.3f} dct')
     print()
 
     place_merchants(nodes)
     value = calculate_value(nodes)['My Value'].sum()
-    print(f'Profit: {value:.3f}')
+    print(f'Profit: {value:.3f} dct')
     print()
 
 if __name__ == '__main__':
