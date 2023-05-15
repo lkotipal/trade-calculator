@@ -5,7 +5,7 @@ from nodes import calculate_value, read_nodes
 def main():
     nodes = read_nodes()
     value = calculate_value(nodes)['My Value'].sum()
-    print(f'Profit: {value:.3f} dct')
+    print(f'Current profit: {value:.3f} dct')
     print()
 
     h = 0.001
@@ -13,12 +13,10 @@ def main():
     nodes['Power Modifier'] += h
     print(f"1% global trade power gives {(calculate_value(nodes)['My Value'].sum() - value) / (100 * h):.3f} dct")
     nodes['Power Modifier'] -= h
-    print()
 
     nodes['Trade Efficiency'] += h
     print(f"1% trade efficiency gives {(calculate_value(nodes)['My Value'].sum() - value) / (100 * h):.3f} dct")
     nodes['Trade Efficiency'] -= h
-    print()
 
     marginal_profits = pd.DataFrame(columns=('dct / power', 'dct / privateer', 'dct / value'))
     for node in nodes[nodes['Trade Power'] > 0].index:

@@ -57,12 +57,12 @@ def place_merchants(nodes):
 def main():
     nodes = read_nodes()
     value = calculate_value(nodes)['My Value'].sum()
-    print(f'Profit: {value:.3f} dct')
+    print(f'Current profit: {value:.3f} dct')
     print()
 
     place_merchants(nodes)
     value = calculate_value(nodes)['My Value'].sum()
-    print(f'Profit: {value:.3f} dct')
+    print(f'Optimized profit: {value:.3f} dct')
     print()
 
 if __name__ == '__main__':
