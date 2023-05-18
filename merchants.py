@@ -23,8 +23,21 @@ def place_merchants(nodes):
     for node in nodes[nodes['Merchant']].index:
         remove_merchant(nodes, node)
         merchants += 1
+    nodes['Collecting'] = False
 
     # Greedy algorithm
+    best_value = 0
+    best_home = ""
+    for node, data in nodes[nodes['Trade Power'] > 0].iterrows():
+        nodes.loc[node, 'Collecting'] = True
+        value = calculate_value(nodes)['My Value'].sum()
+        if value > best_value:
+            best_home = node
+            best_value = value
+        nodes.loc[node, 'Collecting'] = False
+    nodes.loc[best_home, 'Collecting'] = True
+    print(f'Best home node: {best_home}')
+
     best_value = calculate_value(nodes)['My Value'].sum()
     best_merchants = []
     for _ in range(merchants):
@@ -58,12 +71,10 @@ def main():
     nodes = read_nodes()
     value = calculate_value(nodes)['My Value'].sum()
     print(f'Current profit: {value:.3f} dct')
-    print()
 
     place_merchants(nodes)
     value = calculate_value(nodes)['My Value'].sum()
     print(f'Optimized profit: {value:.3f} dct')
-    print()
 
 if __name__ == '__main__':
     main()
