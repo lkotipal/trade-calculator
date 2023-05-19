@@ -5,7 +5,9 @@ from sys import stderr
 
 def main():
     nodes = read_nodes()
-    value = calculate_value(nodes)['My Value'].sum()
+    nodes2 = calculate_value(nodes)
+    print(nodes2.loc[nodes['Local Value'] > 0, 'Total Value'].to_string(), file=stderr)
+    value = nodes2['My Value'].sum()
     print(f'Current profit: {value:.3f} dct')
 
     h = 0.001
