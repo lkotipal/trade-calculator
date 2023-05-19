@@ -1,0 +1,6 @@
+Current profit: 4.618 dct
+Best home node: Constantinople
+Merchant placement:
+Alexandria -> Constantinople
+Constantinople -> Constantinople
+Optimized profit: 4.732 dct

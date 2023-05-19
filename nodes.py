@@ -44,7 +44,6 @@ def read_nodes():
     nodes.loc[transferring, 'Transfer Power'] -= nodes.loc[transferring, 'Our Power']
     nodes['Our Power'] /= (1 + nodes['Power Modifier'])
     nodes.loc[nodes['Collecting'], 'Power Modifier'] -= 0.1 * nodes['Steering'].apply(np.sum).sum()
-    nodes['Privateer Power'] = 0
 
     # Sort nodes
     nodes['Mark'] = 0
@@ -59,9 +58,7 @@ def calculate_value(nodes):
     # Add player power
     nodes.loc[nodes['Collecting'], 'Power Modifier'] += 0.1 * nodes['Steering'].apply(np.sum).sum()
     nodes['Our Power'] *= (1 + nodes['Power Modifier'])
-    nodes['Privateer Efficiency'] = nodes['Privateer Efficiency'].fillna(-1)
-    nodes['Privateer Power'] *= 1.5 * (1 + nodes['Privateer Efficiency'])
-    nodes['Trade Power'] += nodes['Our Power'] + nodes['Privateer Power']
+    nodes['Trade Power'] += nodes['Our Power']
     collecting = nodes['Collecting']
     transferring = ~collecting
     nodes.loc[collecting, 'Collecting Power'] += nodes.loc[collecting, 'Our Power']
@@ -79,5 +76,5 @@ def calculate_value(nodes):
         nodes.loc[node, 'Total Value'] *= nodes.loc[node, 'Collecting Power'] / nodes.loc[node, 'Trade Power']
 
     # Calculate profits
-    nodes['My Value'] = (nodes['Collecting'] * (1 + nodes['Trade Efficiency']) * nodes['Our Power'] / nodes['Collecting Power'] + nodes['Privateer Power'] / (2 * nodes['Trade Power'])) * nodes['Total Value']
+    nodes['My Value'] = (nodes['Collecting'] * (1 + nodes['Trade Efficiency']) * nodes['Our Power'] / nodes['Collecting Power']) * nodes['Total Value']
     return nodes

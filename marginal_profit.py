@@ -20,29 +20,23 @@ def main():
     print(f"1% trade efficiency gives {(calculate_value(nodes)['My Value'].sum() - value) / (100 * h):.3f} dct")
     nodes['Trade Efficiency'] -= h
 
-    marginal_profits = pd.DataFrame(columns=('dct / power', 'dct / privateer', 'dct / value'))
+    marginal_profits = pd.DataFrame(columns=('dct / power', 'dct / value'))
     for node in nodes[nodes['Trade Power'] > 0].index:
         nodes.loc[node, 'Our Power'] += h
         power_profit = (calculate_value(nodes)['My Value'].sum() - value) / h
         nodes.loc[node, 'Our Power'] -= h
-
-        nodes.loc[node, 'Privateer Power'] += h
-        privateer_profit = (calculate_value(nodes)['My Value'].sum() - value) / h
-        nodes.loc[node, 'Privateer Power'] -= h
 
         # Goods produced is given per annum
         nodes.loc[node, 'Local Value'] += h
         value_profit = (calculate_value(nodes)['My Value'].sum() - value) / (12 * h)
         nodes.loc[node, 'Local Value'] -= h
 
-        marginal_profits.loc[node] = [power_profit, privateer_profit, value_profit]
+        marginal_profits.loc[node] = [power_profit, value_profit]
     
     print(marginal_profits, file=stderr)
 
     idx = marginal_profits['dct / power'].idxmax()
     print(f"Best profit from trade power {marginal_profits.loc[idx, 'dct / power']:.3} dct at {idx}")
-    idx = marginal_profits['dct / privateer'].idxmax()
-    print(f"Best profit from privateering {marginal_profits.loc[idx, 'dct / privateer']:.3f} dct at {idx}")
     idx = marginal_profits['dct / value'].idxmax()
     print(f"Best profit from trade value {marginal_profits.loc[idx, 'dct / value']:.3f} dct at {idx}")
 

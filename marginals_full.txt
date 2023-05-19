@@ -1,0 +1,32 @@
+Node
+Tunis              1.254400
+Astrakhan          3.162500
+Crimea             2.936341
+Kiev               2.193302
+Valencia           2.306900
+Aleppo             2.349000
+Alexandria         6.032300
+Constantinople     7.131647
+Ragusa             2.342782
+Pest               3.465357
+Krakow             2.993405
+Wien               5.267207
+Saxony             5.350197
+Venice            10.694694
+Genoa             13.088791
+                dct / power  dct / value
+Tunis              0.000000     0.000000
+Astrakhan          0.000000     0.000000
+Crimea             0.000000     0.000000
+Kiev               0.000000     0.000000
+Valencia           0.000000     0.000000
+Aleppo             0.011309     0.010022
+Alexandria         0.021529     0.006557
+Constantinople     0.019623     0.046942
+Ragusa             0.000000     0.000000
+Pest               0.000000     0.000000
+Krakow             0.000000     0.000000
+Wien               0.000000     0.000000
+Saxony             0.000000     0.000000
+Venice             0.000000     0.000000
+Genoa              0.000000     0.000000

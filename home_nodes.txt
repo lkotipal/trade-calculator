@@ -1,0 +1,15 @@
+Tunis: 0.0
+Astrakhan: 0.0
+Crimea: 0.339
+Kiev: 0.0
+Valencia: 0.0
+Aleppo: 0.485
+Alexandria: 0.749
+Constantinople: 3.54
+Ragusa: 0.807
+Pest: 0.0
+Krakow: 0.0
+Wien: 0.0
+Saxony: 0.0
+Venice: 0.0
+Genoa: 0.0
