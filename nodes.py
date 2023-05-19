@@ -70,12 +70,12 @@ def calculate_value(nodes):
     
     # Calculate steering
     nodes['Merchant Power'] = nodes['Merchant Power'].apply(lambda x: x if np.sum(x) else np.ones_like(x))
-    nodes['Steered'] = nodes['Transfer Power'] / nodes['Trade Power'] * nodes['Merchant Power'] / (nodes['Merchant Power'].apply(lambda x: np.sum(x))) * (1.0 + nodes['Steering Bonus'])
+    nodes['Steered'] = nodes['Transfer Power'] / nodes['Trade Power'] * nodes['Merchant Power'] / (nodes['Merchant Power'].apply(lambda x: np.sum(x)))
 
     # Steer trade
     nodes['Total Value'] = nodes['Local Value']
     for node in nodes[nodes['Trade Power'] > 0].index:
-        nodes.loc[nodes.loc[node, 'To'], 'Total Value'] += nodes.loc[node, 'Steered'] * nodes.loc[node, 'Total Value']
+        nodes.loc[nodes.loc[node, 'To'], 'Total Value'] += nodes.loc[node, 'Steered'] * nodes.loc[node, 'Total Value'] * (1.0 + nodes['Steering Bonus'])
         nodes.loc[node, 'Total Value'] *= nodes.loc[node, 'Collecting Power'] / nodes.loc[node, 'Trade Power']
 
     # Calculate profits

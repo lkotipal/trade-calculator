@@ -23,15 +23,15 @@ def setup(nodes, rng):
 def main():
     nodes = read_nodes()
     rng = np.random.default_rng(1444)
-    number = 100
+    n = 100
     t = 0
-    for i in range(number):
+    for i in range(n):
         print(i, file=stderr)
         setup(nodes, rng)
         t0 = time()
         calculate_value(nodes)['My Value'].sum()
         t += time() - t0
-    print(t / number)
+    print(t / n)
 
 if __name__ == '__main__':
     main()
