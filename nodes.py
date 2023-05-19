@@ -31,12 +31,13 @@ def read_nodes():
     nodes['Merchant Power'] = nodes['Merchant Power'].apply(np.array)
     nodes['Merchant Bonus'] = nodes['Merchant Bonus'].apply(np.array)
     nodes['Steering'] = nodes['Steering'].apply(np.array)
+    nodes['Steering Bonus'] = nodes['Steering Bonus'].apply(np.array)
     # Percentage -> number
     nodes['Collecting Power'] = nodes['Trade Power'] * nodes['Collecting Power']
     nodes['Transfer Power'] = nodes['Trade Power'] * nodes['Transfer Power']
     # Separate player power
     nodes['Trade Power'] -= nodes['Our Power']
-    nodes['Merchant Power'] -= nodes['Our Power'] * nodes['Steering'] * nodes['Steering Bonus']
+    nodes['Merchant Power'] -= nodes['Our Power'] * nodes['Steering'] * (1 + nodes['Steering Bonus'])
     collecting = nodes['Collecting']
     transferring = ~collecting
     nodes.loc[collecting, 'Collecting Power'] -= nodes.loc[collecting, 'Our Power']
@@ -65,7 +66,7 @@ def calculate_value(nodes):
     transferring = ~collecting
     nodes.loc[collecting, 'Collecting Power'] += nodes.loc[collecting, 'Our Power']
     nodes.loc[transferring, 'Transfer Power'] += nodes.loc[transferring, 'Our Power']
-    nodes['Merchant Power'] += nodes['Our Power'] * nodes['Steering'] * nodes['Steering Bonus']
+    nodes['Merchant Power'] += nodes['Our Power'] * nodes['Steering'] * (1 + nodes['Steering Bonus'])
     
     # Calculate steering
     nodes['Merchant Power'] = nodes['Merchant Power'].apply(lambda x: x if np.sum(x) else np.ones_like(x))
