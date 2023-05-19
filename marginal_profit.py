@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 from nodes import calculate_value, read_nodes
+from sys import stderr
 
 def main():
     nodes = read_nodes()
@@ -34,6 +35,8 @@ def main():
         nodes.loc[node, 'Local Value'] -= h
 
         marginal_profits.loc[node] = [power_profit, privateer_profit, value_profit]
+    
+    print(marginal_profits, file=stderr)
 
     idx = marginal_profits['dct / power'].idxmax()
     print(f"Best profit from trade power {marginal_profits.loc[idx, 'dct / power']:.3} dct at {idx}")

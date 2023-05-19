@@ -34,7 +34,7 @@ def read_nodes():
     # Percentage -> number
     nodes['Collecting Power'] = nodes['Trade Power'] * nodes['Collecting Power']
     nodes['Transfer Power'] = nodes['Trade Power'] * nodes['Transfer Power']
-    nodes['Merchant Power'] = nodes['Transfer Power'] * nodes['Merchant Power']
+    nodes['Merchant Power'] = nodes['Transfer Power'] * nodes['Merchant Power'] # TODO THIS IS WRONG :D
     # Separate player power
     nodes['Trade Power'] -= nodes['Our Power']
     nodes['Merchant Power'] -= nodes['Our Power'] * nodes['Steering']

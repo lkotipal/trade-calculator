@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 
 from nodes import calculate_value, read_nodes
+from sys import stderr
 
 def remove_merchant(nodes, node):
     nodes.loc[node, 'Merchant'] = False
@@ -31,6 +32,7 @@ def place_merchants(nodes):
     for node, data in nodes[nodes['Trade Power'] > 0].iterrows():
         nodes.loc[node, 'Collecting'] = True
         value = calculate_value(nodes)['My Value'].sum()
+        print(f'{node}: {value:.3}', file=stderr)
         if value > best_value:
             best_home = node
             best_value = value
