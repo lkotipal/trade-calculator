@@ -12,13 +12,12 @@ def setup(nodes, rng):
     nodes['Transfer Power'] = 1 - nodes['Collecting Power']
     nodes['Power Modifier'] = rng.uniform(size=nodes.shape[0])
     nodes['Our Power'] = rng.uniform(high=100, size=nodes.shape[0])
+    nodes['Merchant Power'] = rng.uniform(high=100, size=nodes.shape[0])
     nodes['Trade Efficiency'] = rng.uniform(size=nodes.shape[0])
     nodes['Privateer Efficiency'] = rng.uniform(size=nodes.shape[0])
 
     nodes['Collecting Power'] = nodes['Trade Power'] * nodes['Collecting Power']
     nodes['Transfer Power'] = nodes['Trade Power'] * nodes['Transfer Power']
-    nodes['Merchant Power'] = nodes['Merchant Power'].apply(lambda x: rng.dirichlet(np.ones_like(x)))
-    nodes['Merchant Power'] = nodes['Transfer Power'] * nodes['Merchant Power'] # TODO THIS IS WRONG :D
 
 def main():
     nodes = read_nodes()

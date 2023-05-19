@@ -7,7 +7,6 @@ def main():
     nodes = read_nodes()
     value = calculate_value(nodes)['My Value'].sum()
     print(f'Current profit: {value:.3f} dct')
-    print()
 
     h = 0.001
     print('Marginal profit:')

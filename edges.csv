@@ -1,156 +1,156 @@
-From,To,Merchant Power,Steering Bonus,Steering
-Aleppo,Alexandria,0.729,0.066,FALSE
-Aleppo,Constantinople,0.27,0.1,TRUE
-Alexandria,Constantinople,0.322,0.1,TRUE
-Alexandria,Genoa,0.375,0.122,FALSE
-Alexandria,Venice,0.301,0.115,FALSE
-Amazonas,Brazil,0,0,FALSE
-Amazonas,Caribbean,0,0,FALSE
-Amazonas,Cuiaba,0,0,FALSE
-Astrakhan,Crimea,0.605,0.114,FALSE
-Astrakhan,Kazan,0.394,0.05,FALSE
-Australia,Moluccas,0,0,FALSE
-Baltic Sea,Lübeck,0,0,FALSE
-Basra,Aleppo,0,0,FALSE
-Basra,Persia,0,0,FALSE
-Beijing,Yumen,0,0,FALSE
-Bengal,Coromandel,0,0,FALSE
-Bengal,Doab,0,0,FALSE
-Bordeaux,Champagne,0,0,FALSE
-Brazil,Ivory Coast,0,0,FALSE
-Burma,Bengal,0,0,FALSE
-Burma,Siam,0,0,FALSE
-California,Girin,0,0,FALSE
-California,Mexico,0,0,FALSE
-California,Mississippi River,0,0,FALSE
-Canton,Malacca,0,0,FALSE
-Canton,Philippines,0,0,FALSE
-Canton,Hangzhou,0,0,FALSE
-Cape,Ivory Coast,0,0,FALSE
-Caribbean,Bordeaux,0,0,FALSE
-Caribbean,Chesapeake Bay,0,0,FALSE
-Caribbean,Sevilla,0,0,FALSE
-Champagne,English Channel,0,0,FALSE
-Champagne,Genoa,0,0,FALSE
-Chengdu,Burma,0,0,FALSE
-Chengdu,Canton,0,0,FALSE
-Chengdu,Xi'an,0,0,FALSE
-Chesapeake Bay,English Channel,0,0,FALSE
-Chesapeake Bay,Gulf of St. Lawrence,0,0,FALSE
-Congo,Ivory Coast,0,0,FALSE
-Congo,Zambezi,0,0,FALSE
-Constantinople,Ragusa,1,0.114,FALSE
-Coromandel,Cape,0,0,FALSE
-Coromandel,Gujarat,0,0,FALSE
-Coromandel,Gulf of Aden,0,0,FALSE
-Crimea,Constantinople,0,0,FALSE
-Crimea,Kiev,0.493,0.05,FALSE
-Crimea,Pest,0.506,0.075,FALSE
-Cuiaba,Lima,0,0,FALSE
-Cuiaba,Rio de la Plata,0,0,FALSE
-Deccan,Coromandel,0,0,FALSE
-Deccan,Gujarat,0,0,FALSE
-Doab,Deccan,0,0,FALSE
-Doab,Lahore,0,0,FALSE
-Ethiopia,Alexandria,0,0,FALSE
-Ethiopia,Gulf of Aden,0,0,FALSE
-Girin,Beijing,0,0,FALSE
-Girin,Nippon,0,0,FALSE
-Girin,Siberia,0,0,FALSE
-Great Lakes,Congo,0,0,FALSE
-Great Lakes,Zanzibar,0,0,FALSE
-Gujarat,Gulf of Aden,0,0,FALSE
-Gujarat,Hormuz,0,0,FALSE
-Gujarat,Zanzibar,0,0,FALSE
-Gulf of Aden,Alexandria,0,0,FALSE
-Gulf of Aden,Hormuz,0,0,FALSE
-Gulf of Aden,Zanzibar,0,0,FALSE
-Gulf of St. Lawrence,Bordeaux,0,0,FALSE
-Gulf of St. Lawrence,North Sea,0,0,FALSE
-Hangzhou,Beijing,0,0,FALSE
-Hangzhou,Malacca,0,0,FALSE
-Hangzhou,Xi'an,0,0,FALSE
-Hormuz,Basra,0,0,FALSE
-Hudson Bay,Gulf of St. Lawrence,0,0,FALSE
-Ivory Coast,Bordeaux,0,0,FALSE
-Ivory Coast,Caribbean,0,0,FALSE
-Ivory Coast,English Channel,0,0,FALSE
-Ivory Coast,Sevilla,0,0,FALSE
-Katsina,Ethiopia,0,0,FALSE
-Katsina,Timbuktu,0,0,FALSE
-Katsina,Tunis,0,0,FALSE
-Kazan,Novgorod,0,0,FALSE
-Kiev,Krakow,0.396,0.091,FALSE
-Kiev,Novgorod,0.603,0.106,FALSE
-Krakow,Baltic Sea,0.431,0.12,FALSE
-Krakow,Saxony,0.324,0.113,FALSE
-Krakow,Wien,0.244,0.104,FALSE
-Lahore,Gujarat,0,0,FALSE
-Lahore,Persia,0,0,FALSE
-Lahore,Samarkand,0,0,FALSE
-Lhasa,Bengal,0,0,FALSE
-Lhasa,Chengdu,0,0,FALSE
-Lhasa,Lahore,0,0,FALSE
-Lima,Panama,0,0,FALSE
-Lima,Polynesian Triangle,0,0,FALSE
-Lübeck,English Channel,0,0,FALSE
-Malacca,Bengal,0,0,FALSE
-Malacca,Cape,0,0,FALSE
-Mexico,Caribbean,0,0,FALSE
-Mexico,Panama,0,0,FALSE
-Mexico,Polynesian Triangle,0,0,FALSE
-Mississippi River,Caribbean,0,0,FALSE
-Mississippi River,Ohio,0,0,FALSE
-Moluccas,Malacca,0,0,FALSE
-Nippon,Hangzhou,0,0,FALSE
-North Sea,English Channel,0,0,FALSE
-North Sea,Lübeck,0,0,FALSE
-Novgorod,Baltic Sea,0,0,FALSE
-Novgorod,White Sea,0,0,FALSE
-Ohio,Gulf of St. Lawrence,0,0,FALSE
-Ohio,Chesapeake Bay,0,0,FALSE
-Panama,Caribbean,0,0,FALSE
-Patagonia,Cuiaba,0,0,FALSE
-Patagonia,Rio de la Plata,0,0,FALSE
-Persia,Aleppo,0,0,FALSE
-Persia,Astrakhan,0,0,FALSE
-Pest,Krakow,0.515,0.091,FALSE
-Pest,Wien,0.484,0.104,FALSE
-Philippines,Moluccas,0,0,FALSE
-Philippines,Polynesian Triangle,0,0,FALSE
-Polynesian Triangle,Australia,0,0,FALSE
-Polynesian Triangle,Nippon,0,0,FALSE
-Polynesian Triangle,Panama,0,0,FALSE
-Ragusa,Genoa,0.043,0.05,FALSE
-Ragusa,Venice,0.427,0.127,FALSE
-Ragusa,Pest,0.528,0.075,FALSE
-Rheinland,Champagne,0,0,FALSE
-Rheinland,Lübeck,0,0,FALSE
-Rio de la Plata,Brazil,0,0,FALSE
-Rio Grande,Mexico,0,0,FALSE
-Rio Grande,Mississippi River,0,0,FALSE
-Safi,Sevilla,0,0,FALSE
-Samarkand,Astrakhan,0,0,FALSE
-Samarkand,Persia,0,0,FALSE
-Saxony,Lübeck,0.732,0.131,FALSE
-Saxony,Rheinland,0.403,0.112,FALSE
-Sevilla,Valencia,0,0,FALSE
-Siam,Malacca,0,0,FALSE
-Siam,Canton,0,0,FALSE
-Siberia,Kazan,0,0,FALSE
-Siberia,Samarkand,0,0,FALSE
-Timbuktu,Ivory Coast,0,0,FALSE
-Timbuktu,Safi,0,0,FALSE
-Tunis,Genoa,0,0,FALSE
-Tunis,Sevilla,1,0.096,FALSE
-Tunis,Valencia,0,0,FALSE
-Valencia,Genoa,1,0.12,FALSE
-White Sea,North Sea,0,0,FALSE
-Wien,Rheinland,0.248,0.113,FALSE
-Wien,Saxony,0.412,0.112,FALSE
-Wien,Venice,0.338,0.096,FALSE
-Xi'an,Beijing,0,0,FALSE
-Xi'an,Yumen,0,0,FALSE
-Yumen,Samarkand,0,0,FALSE
-Zambezi,Zanzibar,0,0,FALSE
-Zanzibar,Cape,0,0,FALSE
+From,To,Merchant Power,Merchant Bonus,Steering,Steering Bonus
+Aleppo,Alexandria,121.7,0.066,FALSE,0.121
+Aleppo,Constantinople,40.91,0.1,TRUE,0.121
+Alexandria,Constantinople,40.91,0.1,TRUE,0.121
+Alexandria,Genoa,52.3,0.122,FALSE,0.121
+Alexandria,Venice,42.1,0.115,FALSE,0.121
+Amazonas,Brazil,0,0,FALSE,0.121
+Amazonas,Caribbean,0,0,FALSE,0.121
+Amazonas,Cuiaba,0,0,FALSE,0.121
+Astrakhan,Crimea,78.8,0.114,FALSE,0.121
+Astrakhan,Kazan,51.55,0.05,FALSE,0.121
+Australia,Moluccas,0,0,FALSE,0.121
+Baltic Sea,Lübeck,0,0,FALSE,0.121
+Basra,Aleppo,0,0,FALSE,0.121
+Basra,Persia,0,0,FALSE,0.121
+Beijing,Yumen,0,0,FALSE,0.121
+Bengal,Coromandel,0,0,FALSE,0.121
+Bengal,Doab,0,0,FALSE,0.121
+Bordeaux,Champagne,0,0,FALSE,0.121
+Brazil,Ivory Coast,0,0,FALSE,0.121
+Burma,Bengal,0,0,FALSE,0.121
+Burma,Siam,0,0,FALSE,0.121
+California,Girin,0,0,FALSE,0.121
+California,Mexico,0,0,FALSE,0.121
+California,Mississippi River,0,0,FALSE,0.121
+Canton,Malacca,0,0,FALSE,0.121
+Canton,Philippines,0,0,FALSE,0.121
+Canton,Hangzhou,0,0,FALSE,0.121
+Cape,Ivory Coast,0,0,FALSE,0.121
+Caribbean,Bordeaux,0,0,FALSE,0.121
+Caribbean,Chesapeake Bay,0,0,FALSE,0.121
+Caribbean,Sevilla,0,0,FALSE,0.121
+Champagne,English Channel,0,0,FALSE,0.121
+Champagne,Genoa,0,0,FALSE,0.121
+Chengdu,Burma,0,0,FALSE,0.121
+Chengdu,Canton,0,0,FALSE,0.121
+Chengdu,Xi'an,0,0,FALSE,0.121
+Chesapeake Bay,English Channel,0,0,FALSE,0.121
+Chesapeake Bay,Gulf of St. Lawrence,0,0,FALSE,0.121
+Congo,Ivory Coast,0,0,FALSE,0.121
+Congo,Zambezi,0,0,FALSE,0.121
+Constantinople,Ragusa,20.6,0.114,FALSE,0.121
+Coromandel,Cape,0,0,FALSE,0.121
+Coromandel,Gujarat,0,0,FALSE,0.121
+Coromandel,Gulf of Aden,0,0,FALSE,0.121
+Crimea,Constantinople,0,0,FALSE,0.121
+Crimea,Kiev,87.73,0.05,FALSE,0.121
+Crimea,Pest,91.3,0.075,FALSE,0.121
+Cuiaba,Lima,0,0,FALSE,0.121
+Cuiaba,Rio de la Plata,0,0,FALSE,0.121
+Deccan,Coromandel,0,0,FALSE,0.121
+Deccan,Gujarat,0,0,FALSE,0.121
+Doab,Deccan,0,0,FALSE,0.121
+Doab,Lahore,0,0,FALSE,0.121
+Ethiopia,Alexandria,0,0,FALSE,0.121
+Ethiopia,Gulf of Aden,0,0,FALSE,0.121
+Girin,Beijing,0,0,FALSE,0.121
+Girin,Nippon,0,0,FALSE,0.121
+Girin,Siberia,0,0,FALSE,0.121
+Great Lakes,Congo,0,0,FALSE,0.121
+Great Lakes,Zanzibar,0,0,FALSE,0.121
+Gujarat,Gulf of Aden,0,0,FALSE,0.121
+Gujarat,Hormuz,0,0,FALSE,0.121
+Gujarat,Zanzibar,0,0,FALSE,0.121
+Gulf of Aden,Alexandria,0,0,FALSE,0.121
+Gulf of Aden,Hormuz,0,0,FALSE,0.121
+Gulf of Aden,Zanzibar,0,0,FALSE,0.121
+Gulf of St. Lawrence,Bordeaux,0,0,FALSE,0.121
+Gulf of St. Lawrence,North Sea,0,0,FALSE,0.121
+Hangzhou,Beijing,0,0,FALSE,0.121
+Hangzhou,Malacca,0,0,FALSE,0.121
+Hangzhou,Xi'an,0,0,FALSE,0.121
+Hormuz,Basra,0,0,FALSE,0.121
+Hudson Bay,Gulf of St. Lawrence,0,0,FALSE,0.121
+Ivory Coast,Bordeaux,0,0,FALSE,0.121
+Ivory Coast,Caribbean,0,0,FALSE,0.121
+Ivory Coast,English Channel,0,0,FALSE,0.121
+Ivory Coast,Sevilla,0,0,FALSE,0.121
+Katsina,Ethiopia,0,0,FALSE,0.121
+Katsina,Timbuktu,0,0,FALSE,0.121
+Katsina,Tunis,0,0,FALSE,0.121
+Kazan,Novgorod,0,0,FALSE,0.121
+Kiev,Krakow,106.5,0.091,FALSE,0.121
+Kiev,Novgorod,155.02,0.106,FALSE,0.121
+Krakow,Baltic Sea,172.3,0.12,FALSE,0.121
+Krakow,Saxony,111.5,0.113,FALSE,0.121
+Krakow,Wien,95.62,0.104,FALSE,0.121
+Lahore,Gujarat,0,0,FALSE,0.121
+Lahore,Persia,0,0,FALSE,0.121
+Lahore,Samarkand,0,0,FALSE,0.121
+Lhasa,Bengal,0,0,FALSE,0.121
+Lhasa,Chengdu,0,0,FALSE,0.121
+Lhasa,Lahore,0,0,FALSE,0.121
+Lima,Panama,0,0,FALSE,0.121
+Lima,Polynesian Triangle,0,0,FALSE,0.121
+Lübeck,English Channel,0,0,FALSE,0.121
+Malacca,Bengal,0,0,FALSE,0.121
+Malacca,Cape,0,0,FALSE,0.121
+Mexico,Caribbean,0,0,FALSE,0.121
+Mexico,Panama,0,0,FALSE,0.121
+Mexico,Polynesian Triangle,0,0,FALSE,0.121
+Mississippi River,Caribbean,0,0,FALSE,0.121
+Mississippi River,Ohio,0,0,FALSE,0.121
+Moluccas,Malacca,0,0,FALSE,0.121
+Nippon,Hangzhou,0,0,FALSE,0.121
+North Sea,English Channel,0,0,FALSE,0.121
+North Sea,Lübeck,0,0,FALSE,0.121
+Novgorod,Baltic Sea,0,0,FALSE,0.121
+Novgorod,White Sea,0,0,FALSE,0.121
+Ohio,Gulf of St. Lawrence,0,0,FALSE,0.121
+Ohio,Chesapeake Bay,0,0,FALSE,0.121
+Panama,Caribbean,0,0,FALSE,0.121
+Patagonia,Cuiaba,0,0,FALSE,0.121
+Patagonia,Rio de la Plata,0,0,FALSE,0.121
+Persia,Aleppo,0,0,FALSE,0.121
+Persia,Astrakhan,0,0,FALSE,0.121
+Pest,Krakow,103.7,0.091,FALSE,0.121
+Pest,Wien,96.22,0.104,FALSE,0.121
+Philippines,Moluccas,0,0,FALSE,0.121
+Philippines,Polynesian Triangle,0,0,FALSE,0.121
+Polynesian Triangle,Australia,0,0,FALSE,0.121
+Polynesian Triangle,Nippon,0,0,FALSE,0.121
+Polynesian Triangle,Panama,0,0,FALSE,0.121
+Ragusa,Genoa,8.3,0.05,FALSE,0.121
+Ragusa,Venice,80.6,0.127,FALSE,0.121
+Ragusa,Pest,100.14,0.075,FALSE,0.121
+Rheinland,Champagne,0,0,FALSE,0.121
+Rheinland,Lübeck,0,0,FALSE,0.121
+Rio de la Plata,Brazil,0,0,FALSE,0.121
+Rio Grande,Mexico,0,0,FALSE,0.121
+Rio Grande,Mississippi River,0,0,FALSE,0.121
+Safi,Sevilla,0,0,FALSE,0.121
+Samarkand,Astrakhan,0,0,FALSE,0.121
+Samarkand,Persia,0,0,FALSE,0.121
+Saxony,Lübeck,171.3,0.131,FALSE,0.121
+Saxony,Rheinland,62.78,0.112,FALSE,0.121
+Sevilla,Valencia,0,0,FALSE,0.121
+Siam,Malacca,0,0,FALSE,0.121
+Siam,Canton,0,0,FALSE,0.121
+Siberia,Kazan,0,0,FALSE,0.121
+Siberia,Samarkand,0,0,FALSE,0.121
+Timbuktu,Ivory Coast,0,0,FALSE,0.121
+Timbuktu,Safi,0,0,FALSE,0.121
+Tunis,Genoa,0,0,FALSE,0.121
+Tunis,Sevilla,56.62,0.096,FALSE,0.121
+Tunis,Valencia,0,0,FALSE,0.121
+Valencia,Genoa,45.05,0.12,FALSE,0.121
+White Sea,North Sea,0,0,FALSE,0.121
+Wien,Rheinland,81.2,0.113,FALSE,0.121
+Wien,Saxony,134.9,0.112,FALSE,0.121
+Wien,Venice,81.17,0.096,FALSE,0.121
+Xi'an,Beijing,0,0,FALSE,0.121
+Xi'an,Yumen,0,0,FALSE,0.121
+Yumen,Samarkand,0,0,FALSE,0.121
+Zambezi,Zanzibar,0,0,FALSE,0.121
+Zanzibar,Cape,0,0,FALSE,0.121

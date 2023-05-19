@@ -25,19 +25,18 @@ def read_nodes():
     # Null data to empty lists
     isna = nodes['To'].isna()
     nodes.loc[isna, 'To'] = pd.Series([[]] * isna.sum()).values
-    nodes.loc[isna, 'Steering Bonus'] = pd.Series([[]] * isna.sum()).values
+    nodes.loc[isna, 'Merchant Bonus'] = pd.Series([[]] * isna.sum()).values
     nodes.loc[isna, 'Merchant Power'] = pd.Series([[]] * isna.sum()).values
     # Lists to Numpy arrays
     nodes['Merchant Power'] = nodes['Merchant Power'].apply(np.array)
-    nodes['Steering Bonus'] = nodes['Steering Bonus'].apply(np.array)
+    nodes['Merchant Bonus'] = nodes['Merchant Bonus'].apply(np.array)
     nodes['Steering'] = nodes['Steering'].apply(np.array)
     # Percentage -> number
     nodes['Collecting Power'] = nodes['Trade Power'] * nodes['Collecting Power']
     nodes['Transfer Power'] = nodes['Trade Power'] * nodes['Transfer Power']
-    nodes['Merchant Power'] = nodes['Transfer Power'] * nodes['Merchant Power'] # TODO THIS IS WRONG :D
     # Separate player power
     nodes['Trade Power'] -= nodes['Our Power']
-    nodes['Merchant Power'] -= nodes['Our Power'] * nodes['Steering']
+    nodes['Merchant Power'] -= nodes['Our Power'] * nodes['Steering'] * nodes['Steering Bonus']
     collecting = nodes['Collecting']
     transferring = ~collecting
     nodes.loc[collecting, 'Collecting Power'] -= nodes.loc[collecting, 'Our Power']
@@ -66,16 +65,16 @@ def calculate_value(nodes):
     transferring = ~collecting
     nodes.loc[collecting, 'Collecting Power'] += nodes.loc[collecting, 'Our Power']
     nodes.loc[transferring, 'Transfer Power'] += nodes.loc[transferring, 'Our Power']
-    nodes['Merchant Power'] += nodes['Our Power'] * nodes['Steering']
+    nodes['Merchant Power'] += nodes['Our Power'] * nodes['Steering'] * nodes['Steering Bonus']
     
     # Calculate steering
     nodes['Merchant Power'] = nodes['Merchant Power'].apply(lambda x: x if np.sum(x) else np.ones_like(x))
-    nodes['Steered'] = nodes['Transfer Power'] / nodes['Trade Power'] * nodes['Merchant Power'] / (nodes['Merchant Power'].apply(lambda x: np.sum(x)))
+    nodes['Steered'] = nodes['Transfer Power'] / nodes['Trade Power'] * nodes['Merchant Power'] / (nodes['Merchant Power'].apply(lambda x: np.sum(x))) * (1.0 + nodes['Merchant Bonus'])
 
     # Steer trade
     nodes['Total Value'] = nodes['Local Value']
     for node in nodes[nodes['Trade Power'] > 0].index:
-        nodes.loc[nodes.loc[node, 'To'], 'Total Value'] += nodes.loc[node, 'Steered'] * nodes.loc[node, 'Total Value'] * (1.0 + nodes['Steering Bonus'])
+        nodes.loc[nodes.loc[node, 'To'], 'Total Value'] += nodes.loc[node, 'Steered'] * nodes.loc[node, 'Total Value']
         nodes.loc[node, 'Total Value'] *= nodes.loc[node, 'Collecting Power'] / nodes.loc[node, 'Trade Power']
 
     # Calculate profits
