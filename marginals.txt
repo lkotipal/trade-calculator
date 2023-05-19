@@ -1,6 +1,7 @@
 Current profit: 4.618 dct
 Marginal profit:
-1% global trade power gives 0.023 dct
 1% trade efficiency gives 0.043 dct
+1% trade steering gives 0.005 dct
+1% global trade power gives 0.023 dct
 Best profit from trade power 0.0215 dct at Alexandria
 Best profit from trade value 0.047 dct at Constantinople

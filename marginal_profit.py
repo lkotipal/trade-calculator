@@ -11,15 +11,21 @@ def main():
     print(f'Current profit: {value:.3f} dct')
 
     h = 0.001
+    # Marginal profits from global modifiers using two-point derivative
     print('Marginal profit:')
-    nodes['Power Modifier'] += h
-    print(f"1% global trade power gives {(calculate_value(nodes)['My Value'].sum() - value) / (100 * h):.3f} dct")
-    nodes['Power Modifier'] -= h
-
     nodes['Trade Efficiency'] += h
     print(f"1% trade efficiency gives {(calculate_value(nodes)['My Value'].sum() - value) / (100 * h):.3f} dct")
     nodes['Trade Efficiency'] -= h
 
+    nodes['Steering Bonus'] += h
+    print(f"1% trade steering gives {(calculate_value(nodes)['My Value'].sum() - value) / (100 * h):.3f} dct")
+    nodes['Steering Bonus'] -= h
+
+    nodes['Power Modifier'] += h
+    print(f"1% global trade power gives {(calculate_value(nodes)['My Value'].sum() - value) / (100 * h):.3f} dct")
+    nodes['Power Modifier'] -= h
+
+    # Marginal profits from trade power and value using two-point derivative
     marginal_profits = pd.DataFrame(columns=('dct / power', 'dct / value'))
     for node in nodes[nodes['Trade Power'] > 0].index:
         nodes.loc[node, 'Our Power'] += h

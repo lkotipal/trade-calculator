@@ -1,9 +1,10 @@
 import numpy as np
-import pandas as pd
 
 from nodes import calculate_value, read_nodes
 from sys import stderr
 
+# Remove merchant and its effects from node
+# Takes as input the DataFrame of nodes and the name of the node
 def remove_merchant(nodes, node):
     nodes.loc[node, 'Merchant'] = False
     nodes.loc[node, 'Steering'][:] = False
@@ -11,6 +12,9 @@ def remove_merchant(nodes, node):
     nodes.loc[node, 'Power Modifier'] -= 0.05
     nodes.loc[node, 'Our Power'] -= 2
 
+# Add a merchant to a node
+# Takes as input the DataFrame of nodes, name of the node to add an to steer to
+# If node == to, merchant is set to collect
 def add_merchant(nodes, node, to):
     nodes.loc[node, 'Merchant'] = True
     if node != to:
@@ -19,14 +23,16 @@ def add_merchant(nodes, node, to):
     nodes.loc[node, 'Power Modifier'] += 0.05
     nodes.loc[node, 'Our Power'] += 2
 
+# Attempt to optimize home node and merchant placement using a greedy algorithm
 def place_merchants(nodes):
+    # First remove and count all merchants
     merchants = 0
     for node in nodes[nodes['Merchant']].index:
         remove_merchant(nodes, node)
         merchants += 1
     nodes['Collecting'] = False
 
-    # Greedy algorithm
+    # Iterate through all nodes to find best place to collect
     best_value = 0
     best_home = ""
     for node, data in nodes[nodes['Trade Power'] > 0].iterrows():
@@ -40,12 +46,14 @@ def place_merchants(nodes):
     nodes.loc[best_home, 'Collecting'] = True
     print(f'Best home node: {best_home}')
 
+    # Place merchants using a greedy algorithm
     best_value = calculate_value(nodes)['My Value'].sum()
     best_merchants = []
     for _ in range(merchants):
         best_fromto = ()
         for node, data in nodes[~nodes['Merchant'] & nodes['Trade Power'] > 0].iterrows():
             if data['Collecting']:
+                # Only set merchants to collect in home node
                 add_merchant(nodes, node, node)
                 value = calculate_value(nodes)['My Value'].sum()
                 if value > best_value:
@@ -53,6 +61,7 @@ def place_merchants(nodes):
                     best_value = value
                 remove_merchant(nodes, node)
             else:
+                # Otherwise try steering in every direction
                 for to in data['To']:
                     add_merchant(nodes, node, to)
                     value = calculate_value(nodes)['My Value'].sum()
@@ -60,10 +69,11 @@ def place_merchants(nodes):
                         best_fromto = (node, to)
                         best_value = value
                     remove_merchant(nodes, node)
+        # Add best merchant and continue
         add_merchant(nodes, best_fromto[0], best_fromto[1])
         best_merchants.append(best_fromto)
     
-    # TODO: collection
+    # TODO: collecting outside home node
 
     print('Merchant placement:')
     for node, to in best_merchants:
