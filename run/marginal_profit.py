@@ -1,6 +1,8 @@
 import pandas as pd
+import sys
+
+sys.path.append("../src")
 from nodes import calculate_value, read_nodes
-from sys import stderr
 
 # Finds marginal profits from global modifiers using two-point derivative
 # Takes as input DataFrame of nodes, value to compare against and step size h
@@ -40,8 +42,8 @@ def find_marginals(nodes, value, h):
 def main():
     nodes = read_nodes()
     nodes2 = calculate_value(nodes)
-    print(nodes2.loc[nodes['Local Value'] > 0].to_string(), file=stderr)
-    print('', file=stderr)
+    print(nodes2.loc[nodes['Local Value'] > 0].to_string(), file=sys.stderr)
+    print('', file=sys.stderr)
     value = nodes2['My Value'].sum()
     print(f'Current profit: {value:.3f} dct')
 
@@ -53,7 +55,7 @@ def main():
     print(f"1% global trade power gives {power_modifier:.3f} dct")
 
     marginal_profits = find_marginals(nodes, value, 0.001)
-    print(marginal_profits, file=stderr)
+    print(marginal_profits, file=sys.stderr)
 
     idx = marginal_profits['dct / power'].idxmax()
     print(f"Best profit from trade power {marginal_profits.loc[idx, 'dct / power']:.3} dct at {idx}")

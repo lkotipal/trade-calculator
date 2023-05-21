@@ -1,5 +1,7 @@
+import sys
+
+sys.path.append("../src")
 from nodes import calculate_value, read_nodes, remove_merchant, add_merchant
-from sys import stderr
 
 # Attempts to optimize home node with static merchant placement
 # Takes as input the dataframe of nodes, returns best home node as string
@@ -10,7 +12,7 @@ def optimize_home(nodes):
     for node, _ in nodes[nodes['Trade Power'] > 0].iterrows():
         nodes.loc[node, 'Collecting'] = True
         value = calculate_value(nodes)['My Value'].sum()
-        print(f'{node}: {value:.3}', file=stderr)
+        print(f'{node}: {value:.3}', file=sys.stderr)
         if value > best_value:
             best_home = node
             best_value = value
