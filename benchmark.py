@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 from math import sqrt
 from nodes import calculate_value, read_nodes
 from sys import stderr
@@ -20,18 +21,20 @@ def setup(nodes, rng):
     nodes['Transfer Power'] = nodes['Trade Power'] * nodes['Transfer Power']
 
 def main():
+    print(np.__version__, file=stderr)
+    print(pd.__version__, file=stderr)
     nodes = read_nodes()
     rng = np.random.default_rng(1444)
     n = 1000
     t = np.zeros(n)
     for i in range(n):
-        print(i, file=stderr)
         setup(nodes, rng)
         t0 = time()
         calculate_value(nodes)['My Value'].sum()
         t[i] = time() - t0
     mu = t.mean()
     sigma = t.std(ddof=1)
+    # Standard error of mean
     print(f't = {mu} += {sigma / sqrt(n)}')
 
 if __name__ == '__main__':
