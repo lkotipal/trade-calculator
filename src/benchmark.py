@@ -1,11 +1,9 @@
 import numpy as np
 import pandas as pd
-import sys
 from math import sqrt
-from time import time
-
-sys.path.append("../src")
 from nodes import calculate_value, read_nodes
+from sys import stderr
+from time import time
 
 # Randomize numeric values in the network
 def setup(nodes, rng):
@@ -23,8 +21,8 @@ def setup(nodes, rng):
     nodes['Transfer Power'] = nodes['Trade Power'] * nodes['Transfer Power']
 
 def main():
-    print(np.__version__, file=sys.stderr)
-    print(pd.__version__, file=sys.stderr)
+    print(np.__version__, file=stderr)
+    print(pd.__version__, file=stderr)
     nodes = read_nodes()
     rng = np.random.default_rng(1444)
     n = 1000
