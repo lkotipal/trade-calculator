@@ -1,19 +1,21 @@
-Node
-Tunis              1.254400
-Astrakhan          3.162500
-Crimea             2.936341
-Kiev               2.193302
-Valencia           2.306900
-Aleppo             2.349000
-Alexandria         6.032300
-Constantinople     7.131647
-Ragusa             2.342782
-Pest               3.465357
-Krakow             2.993405
-Wien               5.267207
-Saxony             5.350197
-Venice            10.694694
-Genoa             13.088791
+                Local Value  Trade Power  Collecting Power  Transfer Power  Power Modifier  Collecting  Merchant  Our Power  Trade Efficiency  Steering Bonus                               To         Merchant Power         Merchant Bonus               Steering       Unnamed: 5                                                          Steered  Total Value  My Value
+Node                                                                                                                                                                                                                                                                                                                                                                        
+Tunis                  2.56        243.2           119.168         124.032           0.086       False     False        0.0              0.07           0.121       [Genoa, Sevilla, Valencia]      [0.0, 56.62, 0.0]      [0.0, 0.096, 0.0]  [False, False, False]  [nan, nan, nan]                                              [0.0, 0.55896, 0.0]     1.254400  0.000000
+Astrakhan              5.75        320.3           176.165         144.135           0.086       False     False        0.0              0.07           0.121                  [Crimea, Kazan]          [78.8, 51.55]          [0.114, 0.05]         [False, False]       [nan, nan]                          [0.3030490218642118, 0.186861334867664]     3.162500  0.000000
+Crimea                 4.25        412.6           202.174         210.426           0.086       False     False       21.8              0.07           0.121     [Constantinople, Kiev, Pest]     [0.0, 87.73, 91.3]     [0.0, 0.05, 0.075]  [False, False, False]  [nan, nan, nan]                   [0.0, 0.2624108529296766, 0.27959126961961683]     2.936341  0.000000
+Kiev                   4.52        410.6           147.816         262.784           0.086       False     False        0.0              0.07           0.121               [Krakow, Novgorod]        [106.5, 155.02]         [0.091, 0.106]         [False, False]       [nan, nan]                        [0.2843475068828388, 0.41958304068522484]     2.193302  0.000000
+Valencia               3.91        158.3            93.397          64.903           0.086       False     False        0.0              0.07           0.121                          [Genoa]                [45.05]                 [0.12]                [False]            [nan]                                            [0.45920000000000005]     2.306900  0.000000
+Aleppo                 5.22        254.4           114.480         139.920           0.136       False      True       25.1              0.17           0.121     [Alexandria, Constantinople]         [121.7, 40.91]           [0.066, 0.1]          [False, True]       [nan, nan]                         [0.43879656847672344, 0.152208043785745]     2.349000  0.000000
+Alexandria             8.11        341.7           198.186         143.514           0.136       False      True       25.1              0.17           0.121  [Constantinople, Genoa, Venice]    [40.91, 52.3, 42.1]    [0.1, 0.122, 0.115]   [True, False, False]  [nan, nan, nan]  [0.13968235902741852, 0.18214361096740814, 0.14570563890325916]     6.032300  0.000000
+Constantinople         5.95        272.2           236.814          35.386           0.286        True     False      143.3              0.07           0.121                         [Ragusa]                 [20.6]                [0.114]                [False]            [nan]                                                        [0.14482]     7.131647  4.617558
+Ragusa                 4.82        393.9           153.621         240.279           0.086       False     False       31.0              0.07           0.121            [Genoa, Venice, Pest]    [8.3, 80.6, 100.14]   [0.05, 0.127, 0.075]  [False, False, False]  [nan, nan, nan]  [0.028121826068556923, 0.29311300253914513, 0.3473698952602624]     2.342782  0.000000
+Pest                   3.31        393.4           192.766         200.634           0.086       False     False        0.0              0.07           0.121                   [Krakow, Wien]         [103.7, 96.22]         [0.091, 0.104]         [False, False]       [nan, nan]                         [0.2886140306122449, 0.2709869387755102]     3.465357  0.000000
+Krakow                 3.71        639.3           255.720         383.580           0.086       False     False        0.0              0.07           0.121       [Baltic Sea, Saxony, Wien]  [172.3, 111.5, 95.62]   [0.12, 0.113, 0.104]  [False, False, False]  [nan, nan, nan]   [0.3051647251067419, 0.19624611248748086, 0.16693555426703918]     2.993405  0.000000
+Wien                   6.24        696.7           390.152         306.548           0.086       False     False        0.0              0.07           0.121      [Rheinland, Saxony, Venice]   [81.2, 134.9, 81.17]  [0.113, 0.112, 0.096]  [False, False, False]  [nan, nan, nan]    [0.13376817035018665, 0.2220334107040737, 0.1316763238806472]     5.267207  0.000000
+Saxony                 5.36        535.7           321.420         214.280           0.086       False     False        0.0              0.07           0.121              [Lübeck, Rheinland]         [171.3, 62.78]         [0.131, 0.112]         [False, False]       [nan, nan]                       [0.33106681476418326, 0.11929487354750513]     5.350197  0.000000
+Venice                 6.18        252.5           252.500           0.000           0.086       False     False        0.0              0.07           0.121                               []                     []                     []                    NaN              NaN                                                               []    10.694694  0.000000
+Genoa                  9.23        344.7           344.700           0.000           0.086       False     False        0.0              0.07           0.121                               []                     []                     []                    NaN              NaN                                                               []    13.088791  0.000000
+
                 dct / power  dct / value
 Tunis              0.000000     0.000000
 Astrakhan          0.000000     0.000000

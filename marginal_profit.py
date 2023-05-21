@@ -2,10 +2,29 @@ import pandas as pd
 from nodes import calculate_value, read_nodes
 from sys import stderr
 
+# Marginal profits from trade power and value using two-point derivative
+# Takes as input DataFrame of nodes, value to compare against and step size h
+def find_marginals(nodes, value, h):
+    marginal_profits = pd.DataFrame(columns=('dct / power', 'dct / value'))
+    for node in nodes[nodes['Trade Power'] > 0].index:
+        nodes.loc[node, 'Our Power'] += h
+        power_profit = (calculate_value(nodes)['My Value'].sum() - value) / h
+        nodes.loc[node, 'Our Power'] -= h
+
+        # Goods produced is given per annum
+        nodes.loc[node, 'Local Value'] += h
+        value_profit = (calculate_value(nodes)['My Value'].sum() - value) / (12 * h)
+        nodes.loc[node, 'Local Value'] -= h
+
+        marginal_profits.loc[node] = [power_profit, value_profit]
+    
+    return marginal_profits
+
 def main():
     nodes = read_nodes()
     nodes2 = calculate_value(nodes)
     print(nodes2.loc[nodes['Local Value'] > 0].to_string(), file=stderr)
+    print('', file=stderr)
     value = nodes2['My Value'].sum()
     print(f'Current profit: {value:.3f} dct')
 
@@ -24,20 +43,8 @@ def main():
     print(f"1% global trade power gives {(calculate_value(nodes)['My Value'].sum() - value) / (100 * h):.3f} dct")
     nodes['Power Modifier'] -= h
 
-    # Marginal profits from trade power and value using two-point derivative
-    marginal_profits = pd.DataFrame(columns=('dct / power', 'dct / value'))
-    for node in nodes[nodes['Trade Power'] > 0].index:
-        nodes.loc[node, 'Our Power'] += h
-        power_profit = (calculate_value(nodes)['My Value'].sum() - value) / h
-        nodes.loc[node, 'Our Power'] -= h
+    marginal_profits = find_marginals(nodes, value, h)
 
-        # Goods produced is given per annum
-        nodes.loc[node, 'Local Value'] += h
-        value_profit = (calculate_value(nodes)['My Value'].sum() - value) / (12 * h)
-        nodes.loc[node, 'Local Value'] -= h
-
-        marginal_profits.loc[node] = [power_profit, value_profit]
-    
     print(marginal_profits, file=stderr)
 
     idx = marginal_profits['dct / power'].idxmax()
