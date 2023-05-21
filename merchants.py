@@ -7,7 +7,7 @@ def optimize_home(nodes):
     # Iterate through all nodes to find best place to collect
     best_value = 0
     best_home = ""
-    for node, data in nodes[nodes['Trade Power'] > 0].iterrows():
+    for node, _ in nodes[nodes['Trade Power'] > 0].iterrows():
         nodes.loc[node, 'Collecting'] = True
         value = calculate_value(nodes)['My Value'].sum()
         print(f'{node}: {value:.3}', file=stderr)
@@ -18,10 +18,10 @@ def optimize_home(nodes):
     return best_home
 
 # Attempt to optimize merchant placement using a greedy algorithm
-# Takes as input the DataFrame of nodes and amount of merchants to place, returns optimized DataFrame
+# Takes as input the DataFrame of nodes and amount of merchants to place
+# Returns value of optimized placement and list of merchants placed
 def place_merchants(nodes, merchants):
     nodes = nodes.copy()
-
     # Place merchants using a greedy algorithm
     best_value = calculate_value(nodes)['My Value'].sum()
     best_merchants = []
@@ -50,12 +50,7 @@ def place_merchants(nodes, merchants):
         best_merchants.append(best_fromto)
     
     # TODO: collecting outside home node
-
-    print('Merchant placement:')
-    for node, to in best_merchants:
-        print(f'{node} -> {to}')
-    
-    return nodes
+    return best_value, best_merchants
 
 def main():
     nodes = read_nodes()
@@ -73,8 +68,11 @@ def main():
     print(f'Best home node: {best_home}')
     nodes.loc[best_home, 'Collecting'] = True
 
-    nodes = place_merchants(nodes, merchants)
-    value = calculate_value(nodes)['My Value'].sum()
+    value, best_merchants = place_merchants(nodes, merchants)
+    print('Merchant placement:')
+    for node, to in best_merchants:
+        print(f'{node} -> {to}')
+
     print(f'Optimized profit: {value:.3f} dct')
 
 if __name__ == '__main__':

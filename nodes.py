@@ -1,6 +1,5 @@
 import numpy as np
 import pandas as pd
-from sys import stderr
 
 # Topological sort algorithm
 # Takes as input the DataFrame of nodes and the name of the node to start from

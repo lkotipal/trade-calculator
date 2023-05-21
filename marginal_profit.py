@@ -2,8 +2,25 @@ import pandas as pd
 from nodes import calculate_value, read_nodes
 from sys import stderr
 
-# Marginal profits from trade power and value using two-point derivative
+# Finds marginal profits from global modifiers using two-point derivative
 # Takes as input DataFrame of nodes, value to compare against and step size h
+# Returns marginal profits from 1% of trade efficiency, trade steering and power modifier as a tuple
+def find_global_marginals(nodes, value, h):
+    nodes['Trade Efficiency'] += h
+    trade_eff = (calculate_value(nodes)['My Value'].sum() - value) / (100 * h)
+    nodes['Trade Efficiency'] -= h
+    nodes['Steering Bonus'] += h
+    trade_steering = (calculate_value(nodes)['My Value'].sum() - value) / (100 * h)
+    nodes['Steering Bonus'] -= h
+    nodes['Power Modifier'] += h
+    power_modifier = (calculate_value(nodes)['My Value'].sum() - value) / (100 * h)
+    nodes['Power Modifier'] -= h
+
+    return (trade_eff, trade_steering, power_modifier)
+
+# Finds Marginal profits from trade power and value using two-point derivative
+# Takes as input DataFrame of nodes, value to compare against and step size h
+# Returns marginal profits as a DataFrame
 def find_marginals(nodes, value, h):
     marginal_profits = pd.DataFrame(columns=('dct / power', 'dct / value'))
     for node in nodes[nodes['Trade Power'] > 0].index:
@@ -28,23 +45,14 @@ def main():
     value = nodes2['My Value'].sum()
     print(f'Current profit: {value:.3f} dct')
 
-    h = 0.001
-    # Marginal profits from global modifiers using two-point derivative
+    trade_eff, trade_steering, power_modifier = find_global_marginals(nodes, value, 0.001)
+
     print('Marginal profit:')
-    nodes['Trade Efficiency'] += h
-    print(f"1% trade efficiency gives {(calculate_value(nodes)['My Value'].sum() - value) / (100 * h):.3f} dct")
-    nodes['Trade Efficiency'] -= h
+    print(f"1% trade efficiency gives {trade_eff:.3f} dct")
+    print(f"1% trade steering gives {trade_steering:.3f} dct")
+    print(f"1% global trade power gives {power_modifier:.3f} dct")
 
-    nodes['Steering Bonus'] += h
-    print(f"1% trade steering gives {(calculate_value(nodes)['My Value'].sum() - value) / (100 * h):.3f} dct")
-    nodes['Steering Bonus'] -= h
-
-    nodes['Power Modifier'] += h
-    print(f"1% global trade power gives {(calculate_value(nodes)['My Value'].sum() - value) / (100 * h):.3f} dct")
-    nodes['Power Modifier'] -= h
-
-    marginal_profits = find_marginals(nodes, value, h)
-
+    marginal_profits = find_marginals(nodes, value, 0.001)
     print(marginal_profits, file=stderr)
 
     idx = marginal_profits['dct / power'].idxmax()
